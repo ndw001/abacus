@@ -3,7 +3,7 @@
   margin: 10px;
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -18,4 +18,5 @@
   position: absolute;
   top: 0px;
   right: 0px;
+  font-size: 20px;
 }
