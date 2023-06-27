@@ -1,6 +1,5 @@
 .Header {
   background-color: rgba(255, 251, 0, 0.658);
-  margin: 10px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -12,6 +11,7 @@
   font-size: 40px;
   font-family: "Lucida Console", "Courier New", monospace;
   font-weight: 600;
+  margin: 10px;
 }
 
 .Name {
@@ -19,4 +19,5 @@
   top: 0px;
   right: 0px;
   font-size: 20px;
+  margin: 10px;
 }
