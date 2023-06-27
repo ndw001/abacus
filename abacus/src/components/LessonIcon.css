@@ -1,0 +1,12 @@
+.LessonIcon {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.LessonText {
+  text-align: center;
+  padding: 60px 0px;
+}
