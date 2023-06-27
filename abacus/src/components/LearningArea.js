@@ -1,9 +1,12 @@
 import "./LearningArea.css";
+import LessonIcon from "./LessonIcon.js";
 
 function LearningArea() {
   return (
     <div className="LearningArea">
-      <div>LearningArea</div>
+      <div>
+        <LessonIcon />
+      </div>
     </div>
   );
 }
