@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import Uncapitalizer from "./StringFunctions";
+import Uncapitalizer from "./StringFunctions.js";
 
 function NavBar() {
   const tabs = ["Learning", "Worksheets", "Notes", "Settings"];
