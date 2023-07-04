@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Notes.css";
 
 function Notes() {
   // const allNotes =[];
@@ -26,7 +27,8 @@ function Notes() {
       <button onClick={changeNote}>Add Note</button>
       <div className="IndividualNote">
         {" "}
-        Title: {currentNote.title} Content: {currentNote.content}{" "}
+        <div className="NoteTitle">{currentNote.title}</div>
+        <div className="NoteContent">{currentNote.content} </div>
       </div>
     </div>
   );
