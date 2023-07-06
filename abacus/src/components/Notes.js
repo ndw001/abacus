@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
-import "./Notes.css";
+import Note from "./Note";
 
 function Notes() {
-  // const allNotes =[];
+  const [allNotes, setAllNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState({ title: "", content: "" });
 
   const changeNote = () => {
-    const titleInputValue =
+    console.log("PRE ADD ", allNotes);
+    let titleInputValue =
       document.getElementById("TitleInputValue")?.value || "";
-    const contentInputValue =
+    let contentInputValue =
       document.getElementById("ContentInputValue")?.value || "";
     const newNote = { title: titleInputValue, content: contentInputValue };
     setCurrentNote(newNote);
+    allNotes.push(newNote);
+    setAllNotes(allNotes);
+    // TODO: CLEAR NOTES on Submit
+    titleInputValue = "";
+    contentInputValue = "";
+
+    console.log("POST ADD ", allNotes);
   };
 
   return (
@@ -22,14 +30,12 @@ function Notes() {
       </div>
       <div className="ContentInputSection">
         Content
-        <input id="ContentInputValue" />
+        <textarea id="ContentInputValue" />
       </div>
       <button onClick={changeNote}>Add Note</button>
-      <div className="IndividualNote">
-        {" "}
-        <div className="NoteTitle">{currentNote.title}</div>
-        <div className="NoteContent">{currentNote.content} </div>
-      </div>
+      {allNotes.map((note) => {
+        return <Note note={note} />;
+      })}
     </div>
   );
 }
