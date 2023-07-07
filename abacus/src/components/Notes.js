@@ -7,17 +7,10 @@ function Notes() {
 
   const changeNote = () => {
     console.log("PRE ADD ", allNotes);
-    let titleInputValue =
-      document.getElementById("TitleInputValue")?.value || "";
-    let contentInputValue =
-      document.getElementById("ContentInputValue")?.value || "";
-    const newNote = { title: titleInputValue, content: contentInputValue };
-    setCurrentNote(newNote);
+    const newNote = { title: currentNote.title, content: currentNote.content };
     allNotes.push(newNote);
     setAllNotes(allNotes);
-    // TODO: CLEAR NOTES on Submit
-    titleInputValue = "";
-    contentInputValue = "";
+    setCurrentNote({ title: "", content: "" });
 
     console.log("POST ADD ", allNotes);
   };
@@ -25,12 +18,24 @@ function Notes() {
   return (
     <div className="NotesPage">
       <div className="TitleInputSection">
-        Title
-        <input id="TitleInputValue" />
+        <div className="NotesSectionLabel">Note Title</div>
+        <input
+          id="TitleInputValue"
+          value={currentNote.title}
+          onChange={(e) => {
+            setCurrentNote({ ...currentNote, title: e.target.value });
+          }}
+        />
       </div>
       <div className="ContentInputSection">
-        Content
-        <textarea id="ContentInputValue" />
+        <div className="NotesSectionLabel">Content</div>
+        <textarea
+          id="ContentInputValue"
+          value={currentNote.content}
+          onChange={(e) => {
+            setCurrentNote({ ...currentNote, content: e.target.value });
+          }}
+        />
       </div>
       <button onClick={changeNote}>Add Note</button>
       {allNotes.map((note) => {
