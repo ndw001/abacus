@@ -16,7 +16,7 @@ function Notes() {
   };
 
   function editNote(note) {
-    // FIND NOTE EDIT IN ARRAY
+    // FIND NOTE EDIT IN ARRAY OF NOTES
     setCurrentNote(note);
   }
 
