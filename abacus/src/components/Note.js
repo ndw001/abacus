@@ -1,11 +1,19 @@
 import "./Note.css";
 
-function Note(note) {
+function Note(props) {
+  console.log("This is edit func ", props);
   return (
     <div className="IndividualNote">
-      {" "}
-      <div className="NoteTitle">{note.note.title}</div>
-      <div className="NoteContent">{note.note.content} </div>
+      <div className="NoteTitle">{props.note.title}</div>
+      <div className="NoteContent">{props.note.content} </div>
+      <button
+        className="EditButton"
+        onClick={() => {
+          props.editFunc(props.note);
+        }}
+      >
+        Edit
+      </button>
     </div>
   );
 }

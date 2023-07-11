@@ -15,6 +15,11 @@ function Notes() {
     console.log("POST ADD ", allNotes);
   };
 
+  function editNote(note) {
+    // FIND NOTE EDIT IN ARRAY
+    setCurrentNote(note);
+  }
+
   return (
     <div className="NotesPage">
       <div className="TitleInputSection">
@@ -39,7 +44,7 @@ function Notes() {
       </div>
       <button onClick={changeNote}>Add Note</button>
       {allNotes.map((note) => {
-        return <Note note={note} />;
+        return <Note note={note} editFunc={editNote} />;
       })}
     </div>
   );
