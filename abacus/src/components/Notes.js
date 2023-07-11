@@ -6,17 +6,13 @@ function Notes() {
   const [currentNote, setCurrentNote] = useState({ title: "", content: "" });
 
   const changeNote = () => {
-    console.log("PRE ADD ", allNotes);
     const newNote = { title: currentNote.title, content: currentNote.content };
     allNotes.push(newNote);
     setAllNotes(allNotes);
     setCurrentNote({ title: "", content: "" });
-
-    console.log("POST ADD ", allNotes);
   };
 
   function editNote(note) {
-    // FIND NOTE EDIT IN ARRAY OF NOTES
     setCurrentNote(note);
   }
 
