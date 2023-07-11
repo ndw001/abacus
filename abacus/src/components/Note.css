@@ -1,0 +1,16 @@
+.IndividualNote {
+  outline-style: solid;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  position: relative;
+}
+
+.NoteTitle {
+  font-weight: 800;
+}
+
+.EditButton {
+  position: absolute;
+  bottom: 0px;
+}
